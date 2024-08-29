@@ -1,0 +1,104 @@
+.home-bottom-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 60px 0;
+    gap: 40px;
+    color: var(--white);
+    margin-top: 40px;
+
+    &:after {
+        position: absolute;
+        top: 0;
+        left: -50dvw;
+        content: '';
+        background-color: var(--background-color);
+        width: 150dvw;
+        height: 100%;
+        z-index: -2;
+    }
+
+    .bottom-content {
+        display: flex;
+        width: 100%;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 5%;
+
+            li {
+                width: 45%;
+                height: 150px;
+
+                &:not(:nth-child(5), :nth-child(6)) {
+                    border-bottom: 1px solid var(--grey);
+                }
+
+                .position {
+                    font-size: 2rem;
+                    width: 100px;
+                    min-width: 100px;
+                    max-width: 100px;
+                }
+
+                .image-podcast-block {
+                    transform: scale(0.7);
+                }
+
+                .item-podcast-content {
+                    h4 {
+                        font-size: 1rem;
+                    }
+
+                    h5 {
+                        font-size: 0.875rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .home-bottom-container {
+        padding: 40px 0;
+        .bottom-content {
+            ul {
+                li {
+                    width: 100%;
+
+                    &:not(:nth-child(6)) {
+                        border-bottom: 1px solid var(--grey);
+                    }
+
+                    .position {
+                        width: 80px;
+                        min-width: 80px;
+                        max-width: 80px;
+                    }
+
+                    .item-podcast-content {
+                        padding-left: 5px;
+
+                        h4 {
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            font-size: 0.875rem;
+                            padding-right: 10px;
+                        }
+
+                        h5 {
+                            font-size: 0.75rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

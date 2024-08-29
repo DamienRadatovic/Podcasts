@@ -1,0 +1,91 @@
+.podcasts-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    padding-bottom: 40px;
+
+    &:after {
+        position: absolute;
+        top: 0;
+        left: -50dvw;
+        content: '';
+        background-color: var(--background-color);
+        width: 150dvw;
+        height: 100%;
+        z-index: -2;
+    }
+
+    .podcasts-container-title {
+        padding: 40px 0 60px 0;
+
+        h2 {
+            font-family: var(--font-upper), sans-serif;
+            font-weight: 900;
+            font-size: 4rem;
+            line-height: 4rem;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+    }
+
+    .center-loader {
+        min-height: calc(100vh - 45px - 164px - 44px - 50px - 68px - 40px);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .podcasts-container-list {
+        padding-top: 60px;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        column-gap: calc((100% - (15.278vw * 4)) / 3);
+        row-gap: 60px;
+    }
+}
+
+@media (max-width: 767px) {
+    .podcasts-container {
+        .podcasts-container-title {
+            h2 {
+                text-align: center;
+            }
+        }
+
+        .center-loader {
+            min-height: calc(100vh - 50px - 50px - 40px - 292px - 103px - 128px);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .podcasts-filters-container {
+            flex-direction: column;
+            gap: 20px;
+
+            .input-text {
+                width: 100%;
+            }
+
+            .drop-component-container {
+                width: 100%;
+
+                .drop-block-container {
+                    width: 100%;
+                    gap: 0;
+                    justify-content: space-between;
+                }
+            }
+        }
+
+        .podcasts-container-list {
+            padding-top: 40px;
+            row-gap: 20px;
+
+            .podcast-group-card-container {
+                width: 100%;
+            }
+        }
+    }
+}

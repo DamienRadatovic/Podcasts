@@ -1,0 +1,39 @@
+.blog-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: calc(100dvh - 68px - 50px - 44px);
+
+    &:after {
+        position: absolute;
+        top: 0;
+        left: -50dvw;
+        content: '';
+        background-color: var(--background-color);
+        width: 150dvw;
+        height: 100%;
+        z-index: -2;
+    }
+
+    h2 {
+        font-family: var(--font-title), sans-serif;
+        font-size: 4rem;
+        line-height: 4rem;
+        font-weight: 800;
+        color: var(--grey);
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .blog-container {
+        height: calc(100dvh - 50px - 50px - 128px);
+
+        h2 {
+            font-size: 3rem;
+        }
+    }
+}

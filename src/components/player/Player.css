@@ -1,0 +1,116 @@
+.audio-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--grey);
+    margin-top: 15px;
+
+    .controls-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        border-top: 1px solid var(--grey);
+        padding: 15px;
+
+        .play-pause-container {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            width: 40px;
+
+            &:hover {
+                cursor: pointer;
+                opacity: 0.7;
+            }
+        }
+
+        .time-info {
+            display: flex;
+            gap: 5px;
+            font-size: 0.875rem;
+            font-weight: 400;
+        }
+
+        .seek-bar {
+            --c: var(--orange); /* active color */
+            --l: 8px; /* line thickness*/
+            --h: 15px; /* thumb height */
+            --w: 5px; /* thumb width */
+
+            width: 400px;
+            height: var(--h); /* needed for Firefox*/
+            --_c: color-mix(in srgb, var(--c), #000 var(--p,0%));
+            -webkit-appearance :none;
+            -moz-appearance :none;
+            appearance :none;
+            background: none;
+            cursor: pointer;
+            overflow: hidden;
+
+            /* chromium */
+            &::-webkit-slider-thumb{
+                height: var(--h);
+                width: var(--w);
+                background: var(--_c);
+                border-image: linear-gradient(90deg,var(--_c) 50%, var(--grey) 0) 0 1/calc(50% - var(--l)/2) 100vw/0 100vw;
+                -webkit-appearance: none;
+                appearance: none;
+                transition: .3s;
+            }
+
+            /* Firefox */
+            &::-moz-range-thumb {
+                height: var(--h);
+                width: var(--w);
+                background: var(--_c);
+                border-image: linear-gradient(90deg,var(--_c) 50%,var(--grey) 0) 0 1/calc(50% - var(--l)/2) 100vw/0 100vw;
+                -webkit-appearance: none;
+                appearance: none;
+                transition: .3s;
+            }
+
+        }
+
+        .volume-container {
+            position: relative;
+
+            .volume-icon-container {
+                display: flex;
+
+                &:hover {
+                    cursor: pointer;
+                    opacity: 0.7;
+                }
+            }
+
+            .volume-input-container {
+                position: absolute;
+                bottom: 20px;
+                right: 9px;
+                width: 100%;
+                z-index: 10;
+
+                input {
+                    writing-mode: vertical-lr;
+                    direction: rtl;
+                    appearance: slider-vertical;
+                    width: 16px;
+                    vertical-align: bottom;
+                }
+            }
+        }
+    }
+
+    .seek-bar, .volume-bar {
+        width: 300px;
+        margin: 10px;
+    }
+
+    .waveform {
+        width: 100%;
+        height: 100px;
+        margin-top: 20px;
+        padding: 0 15px;
+        margin-bottom: 10px;
+    }
+}

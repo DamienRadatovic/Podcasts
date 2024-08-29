@@ -1,0 +1,14 @@
+.list-podcast-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-right: 20px;
+    overflow: auto;
+    max-height: calc(6.836vh * 2 + 11px);
+
+    .item-podcast-block-container {
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--grey);
+        }
+    }
+}

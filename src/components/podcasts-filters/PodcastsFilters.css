@@ -1,0 +1,13 @@
+.podcasts-filters-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    .input-text {
+        width: 30%;
+    }
+
+    .drop-component-container {
+        width: fit-content;
+    }
+}

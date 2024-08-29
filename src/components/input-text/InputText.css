@@ -1,0 +1,50 @@
+.input-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 25px;
+    border-radius: 10px;
+    gap: 20px;
+
+    .search-svg {
+        display: flex;
+        align-items: center;
+        width: 20px;
+
+        svg {
+            width: 100%;
+        }
+    }
+
+    input {
+        width: calc(100% - 40px);
+        &::placeholder {
+            color: var(--grey);
+        }
+    }
+}
+
+.focus {
+    border: 1px solid var(--white);
+
+    .search-svg {
+        svg {
+            path {
+                fill: var(--white);
+            }
+        }
+    }
+}
+
+.unFocus {
+    border: 1px solid var(--grey);
+
+    .search-svg {
+        svg {
+            path {
+                fill: var(--grey);
+            }
+        }
+    }
+}
